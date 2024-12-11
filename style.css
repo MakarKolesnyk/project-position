@@ -17,7 +17,7 @@ header{
 aside{
     position: fixed;
     left: 0;
-    top: 130px;
+    top: 180px;
     text-decoration: none;
     box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
     height: 100%;
@@ -25,6 +25,7 @@ aside{
     padding-right: 20px;
 }
 aside a{
+    position: relative;
     text-decoration: none;
     color: white;
     text-transform: uppercase;
@@ -41,8 +42,34 @@ aside a:hover{
     text-decoration: underline;
 }
 
+.icon:hover::after{
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    top: 5px;
+    margin-left: 6px;
+}
+
+.games:hover::after{
+    content: url(./assets/icons/gamepad-variant.svg);
+}
+
+.achivments:hover::after{
+    content: url(./assets/icons/trophy.svg);
+}
+
+.settings:hover::after{
+    content: url(./assets/icons/cog.svg);
+}
+
+.friend:hover::after{
+    content: url(./assets/icons/account-multiple.svg);
+   
+}
+
 main{
-    margin-top: 175px;
+    margin-top: 200px;
     margin-left: 400px;
     padding-bottom: 100px;
 }
