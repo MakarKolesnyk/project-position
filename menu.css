@@ -14,12 +14,19 @@
 .main-item{
     display: inline-block;
     position: relative;
+    margin: 0 5px;
+    padding-right: 25px;
 }
 
 .submenu{
     display: none;
     position: absolute;
     background-color: black;
+}
+
+.main-item:hover,
+.submenu-item:hover{
+    background-color: #222;
 }
 
 .main-item:hover>.submenu{
@@ -34,4 +41,31 @@
 
 .submenu-item{
     position: relative;
+    padding-right: 25px;
 }
+
+.main-item:has(>.submenu)::after{
+    content: url(./assets/icons/chevron-down.svg);
+    display: inline-block;
+    width: 25px;
+    position: absolute;
+    right: 0px;
+    top: 4px;
+}
+
+.main-item:has(>.submenu):hover::after{
+    content: url(./assets/icons/chevron-up.svg);
+}
+
+.submenu-item:has(>.submenu)::after{
+    content: url(./assets/icons/chevron-right.svg);
+    display: inline-block;
+    width: 25px;
+    position: absolute;
+    top: 4px;
+}
+
+.submenu-item:has(>.submenu):hover:after{
+    content: url(./assets/icons/chevron-left.svg);
+}
+
